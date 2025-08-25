@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://umkmkwtpamupukan.netlify.app/sitemap.xml
+Sitemap: https://profiledesa.netlify.app/sitemap.xml
+
