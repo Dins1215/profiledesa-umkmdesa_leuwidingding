@@ -805,27 +805,15 @@
         }
 
         /* Responsive fix */
-@media (max-width: 768px) {
-    .horizontal-connector,
-    .line-horizontal,
-    .line-horizontal-connector {
-        display: none;  /* sembunyikan garis horizontal biar ga berantakan */
-    }
+    @media (max-width: 576px) {
+      .card-img-top {
+        height: 160px;
+      }
 
-    .main-vertical-line {
-        height: auto; /* biar menyesuaikan */
-    }
-
-    .kasi-level, .kaur-level, .dusun-level {
-        flex-direction: column; /* susun ke bawah di HP */
-        align-items: center;
-    }
-
-    .kasi-box, .kaur-box, .dusun-card {
-        width: 100%;
-        max-width: 200px;
-    }
+      .content-wrapper {
+  flex: 1;
 }
+    }
 
     </style>
 </head>
