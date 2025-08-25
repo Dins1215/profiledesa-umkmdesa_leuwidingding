@@ -26,6 +26,31 @@
             width: 100%;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
+        }
+        
+        /* Tombol Kembali */
+        .back-button {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            padding: 10px 15px;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .back-button:hover {
+            background: #2a5298;
+            transform: translateY(-2px);
         }
         
         header {
@@ -36,6 +61,7 @@
             color: white;
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
         }
         
         h1 {
@@ -517,7 +543,6 @@
             transform: translateX(-50%);
         }
 
-        
 
         /* Default garis vertikal ke masing-masing kotak KASI */
         .kasi-level .kasi-box {
@@ -593,8 +618,19 @@
             position: absolute;
             top: 50%;          /* sejajar tengah kotak */
             right: 100%;       /* keluar dari sisi kiri kotak */
-            width: 525px;       /* panjang garis ke kiri */
+            width: 588px;       /* panjang garis ke kiri */
             height: 2px;
+            background: #1e3c72;
+        }
+
+        /* Garis vertikal di ujung kiri (ke bawah) */
+        .horizontal-connector::after {
+            content: "";
+            position: absolute;
+            left: 0;           /* ujung paling kiri */
+            top: 0;            /* mulai dari garis horizontal */
+            width: 2px;
+            height: 80px;      /* panjang garis vertikal ke bawah */
             background: #1e3c72;
         }
 
@@ -742,11 +778,40 @@
                 width: 160px;
                 margin-right: 1;
             }
+            
+            /* Responsif untuk tombol kembali */
+            .back-button {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-bottom: 15px;
+                align-self: flex-start;
+            }
         }
+
+        .back-button {
+            background-color: #e74c3c;  /* merah */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #c0392b; /* merah lebih gelap saat hover */
+        }
+
     </style>
 </head>
-<body>
-    <div class="container">
+    <body>
+            <!-- Tambahkan tombol kembali di bawah -->
+        <button class="back-button bottom-back" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> Kembali
+        </button>
+        
         <header>
             <h1>PEMERINTAH DESA LEUWIDINGDING</h1>
             <h2>KECAMATAN LEMAHABANG KABUPATEN CIREBON</h2>
@@ -819,7 +884,7 @@
                     </div>
                     <div class="kasi-box">
                         <h4>KASI. PELAYANAN</h4>
-                        <p>ERMA YUNINGSHI</p>
+                        <p>ERMA YUNINGSIH</p>
                     </div>
                     <div class="kasi-box">
                         <h4>KASI. PEMERINTAHAN</h4>
@@ -842,7 +907,7 @@
                         </div>
                         <div class="kaur-box">
                             <h4>KAUR. UMUM & TU</h4>
-                            <p>MOH. DAXU</p>
+                            <p>MOH. DANU</p>
                         </div>
                     </div>
                 </div>
@@ -873,7 +938,7 @@
                     </div>
                     <div class="dusun-card">
                         <h4>KEPALA DUSUN 05</h4>
-                        <p>EKO PRIVANTO</p>
+                        <p>EKO PRIYANTO</p>
                     </div>
                 </div>
             </div>
@@ -923,13 +988,13 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td class="sisa">2.117.208</td>
+                            <td class="sisa"></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td class="text-left">ADANG SUNANDAR</td>
-                            <td class="text-left">SAWAHGEMJAH</td>
+                            <td class="text-left">SAWAHGENJAH</td>
                             <td>189</td>
                             <td>8.753.545</td>
                             <td>8.753.545</td>
@@ -940,15 +1005,16 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td class="sisa">0</td>
+                            <td class="sisa"></td>
                             <td>LUNAS</td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td class="text-left">HERI MASHURI</td>
-                            <td class="text-left">SEHOKOL</td>
+                            <td class="text-left">SENGKOL</td>
                             <td>144</td>
-                            <td>5.847.282</td>
+                            <td>5.647.282</td>
+                            <td>1.556.065</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -956,8 +1022,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td class="sisa">5.847.282</td>
+                            <td class="sisa"></td>
                             <td></td>
                         </tr>
                         <tr>
@@ -965,7 +1030,7 @@
                             <td class="text-left">R. KARTONO</td>
                             <td class="text-left">LEBAK</td>
                             <td>120</td>
-                            <td>6.448.714</td>
+                            <td>6.648.714</td>
                             <td>1.650.000</td>
                             <td>2.612.000</td>
                             <td>749.605</td>
@@ -974,14 +1039,14 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td class="sisa">1.437.109</td>
+                            <td class="sisa"></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td class="text-left">ERMA YUNINGSHI</td>
-                            <td class="text-left">DUBULAK</td>
-                            <td>260</td>
+                            <td class="text-left">ERMA YUNINGSIH</td>
+                            <td class="text-left">BUBULAK</td>
+                            <td>240</td>
                             <td>9.773.754</td>
                             <td>7.557.022</td>
                             <td>1.219.406</td>
@@ -991,24 +1056,24 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td class="sisa">383.155</td>
+                            <td class="sisa">-</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>6</td>
-                            <td class="text-left">HULI DANJI</td>
-                            <td class="text-left">PESANTRIEN</td>
+                            <td class="text-left">MOH. DANU</td>
+                            <td class="text-left">PESANTREN</td>
                             <td>205</td>
                             <td>9.877.814</td>
                             <td>5.505.000</td>
-                            <td>1.093.159</td>
+                            <td>1.083.159</td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td class="sisa">3.279.655</td>
+                            <td class="sisa"></td>
                             <td></td>
                         </tr>
                         <tr>
@@ -1025,13 +1090,13 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td class="sisa">15.246.975</td>
+                            <td class="sisa"></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>8</td>
                             <td class="text-left">MUARIF SJ</td>
-                            <td class="text-left">BENGKOKITTS</td>
+                            <td class="text-left">BENGKOK/TTS</td>
                             <td>31</td>
                             <td>6.429.907</td>
                             <td></td>
@@ -1042,7 +1107,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td class="sisa">6.429.907</td>
+                            <td class="sisa"></td>
                             <td></td>
                         </tr>
                         <tr>
@@ -1059,7 +1124,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td class="sisa">7.076.444</td>
+                            <td class="sisa"></td>
                             <td></td>
                         </tr>
                         <tr class="total-row">
@@ -1068,15 +1133,15 @@
                             <td class="text-left">JUMLAH DIHP</td>
                             <td></td>
                             <td>68.015.555</td>
-                            <td>26.004.423</td>
-                            <td>4.924.565</td>
-                            <td>749.605</td>
-                            <td>0</td>
-                            <td>614.171</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td class="sisa">35.722.791</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="sisa"></td>
                             <td></td>
                         </tr>
                         <tr class="total-row">
@@ -1085,15 +1150,15 @@
                             <td class="text-left">JUMLAH TOTAL</td>
                             <td>1.317</td>
                             <td>75.110.299</td>
-                            <td>26.004.423</td>
-                            <td>4.924.565</td>
-                            <td>749.605</td>
-                            <td>0</td>
-                            <td>614.171</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td class="sisa">42.817.535</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="sisa"></td>
                             <td></td>
                         </tr>
                     </tbody>
@@ -1113,7 +1178,7 @@
     </div>
 
     <script>
-// Fungsi untuk mengelola tab
+        // Fungsi untuk mengelola tab
         document.querySelectorAll('.tab-btn').forEach(button => {
             button.addEventListener('click', () => {
                 // Hapus kelas active dari semua tab
@@ -1134,6 +1199,10 @@
                 document.getElementById(`${tabId}-tab`).classList.add('active');
             });
         });
+        
+        function goBack() {
+        window.history.back();
+    }
     </script>
 </body>
 </html>
