@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://profiledesa.netlify.app/</loc>
+    <loc>https://desaleuwidingding.netlify.app/</loc>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://profiledesa.netlify.app/produk</loc>
+    <loc>https://desaleuwidingding.netlify.app/produk</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://profiledesa.netlify.app/struktur_desa</loc>
+    <loc>https://desaleuwidingding.netlify.app/struktur_desa</loc>
     <priority>0.80</priority>
   </url>
 </urlset>
+
 
